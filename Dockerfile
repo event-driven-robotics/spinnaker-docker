@@ -1,8 +1,15 @@
-FROM ubuntu:bionic
+FROM eventdrivenrobotics/yarp:focal_v3.4.0
 
 RUN apt update
-RUN apt install -y python3
-RUN apt install -y python3-pip
-RUN apt install -y openssh-client
-RUN pip3 install sPyNNaker8==1!5.1.0
-RUN pip3 install matplotlib
+
+RUN apt install -y \
+	openssh-client \
+	gcc-arm-none-eabi \
+	python3-tk
+
+COPY gitClone8.sh /
+RUN ./gitClone8.sh /usr/local/src/spinnvenv
+
+COPY .spynnaker.cfg /root/
+
+# CMD source /usr/local/src/spinnvenv/bin/activate
