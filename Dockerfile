@@ -1,4 +1,4 @@
-FROM eventdrivenrobotics/yarp:focal_v3.4.0
+FROM eventdrivenrobotics/yarp:focal_v3.4.1
 
 RUN apt update
 
