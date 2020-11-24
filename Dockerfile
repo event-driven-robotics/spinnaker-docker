@@ -10,8 +10,8 @@ RUN apt install -y \
     && apt-get clean \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-COPY gitClone8.sh /
-RUN ./gitClone8.sh /usr/local/src/spinnvenv
+COPY gitClone8_new.sh /
+RUN ./gitClone8_new.sh /usr/local/src/spinnvenv
 
 COPY .spynnaker.cfg /root/
 
